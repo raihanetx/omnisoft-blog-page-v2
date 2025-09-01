@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>omnisoft Blogs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <script>
+      // Setup custom colors for Tailwind
+      tailwind.config = {
+        darkMode: 'class', // Enable class-based dark mode
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Lora', 'serif'],
+            },
+            colors: {
+              'primary-bg': '#1d152d',
+              'card-gradient-from': '#ab5ef4',
+              'card-gradient-to': '#6347ab',
+              'button-primary': '#8a42ff',
+              'button-secondary': '#a066ff',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        /* Default light theme styles */
+        body {
+            background-color: #f9fafb; /* Light mode bg */
+            background-image: 
+                /* Grid overlay */
+                linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                /* Light mode gradient with corner glows */
+                radial-gradient(ellipse at top left, rgba(99, 71, 171, 0.08) 0%, transparent 70%),
+                radial-gradient(ellipse at bottom right, rgba(171, 94, 244, 0.08) 0%, transparent 70%);
+            background-size: 40px 40px, 40px 40px, auto, auto;
+            background-attachment: fixed;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            color: #111827; /* Default light mode text color */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        /* Dark theme styles */
+        html.dark body {
+            background-color: #1d152d;
+            background-image: 
+                /* Grid overlay */
+                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                /* New horizontal gradient with fade */
+                linear-gradient(to right, #2a2140 0%, #1d152d 35%, #1d152d 65%, #2a2140 100%);
+            color: #fff;
+        }
+
+        html.dark .prose-invert h1, 
+        html.dark .prose-invert h2, 
+        html.dark .prose-invert h3, 
+        html.dark .prose-invert h4 {
+          color: white !important;
+          font-family: 'Lora', serif;
+        }
+        .prose-invert code {
+            color: #f3f4f6;
+            font-family: monospace;
+        }
+        .prose-invert code::before, .prose-invert code::after {
+            content: "" !important;
+        }
+        /* Light mode shimmer */
+        .shimmer-bg {
+            animation: shimmer 2.5s infinite linear;
+            background: linear-gradient(to right, #e5e7eb 8%, #d1d5db 18%, #e5e7eb 33%);
+            background-size: 1200px 100%;
+        }
+        /* Dark mode shimmer */
+        html.dark .shimmer-bg {
+            background: linear-gradient(to right, #3a275e 8%, #4f3a7a 18%, #3a275e 33%);
+            background-size: 1200px 100%;
+        }
+        @keyframes shimmer {
+            0% {
+                background-position: -1200px 0;
+            }
+            100% {
+                background-position: 1200px 0;
+            }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^11.3.11"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="font-sans">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
